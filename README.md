@@ -63,7 +63,7 @@ You should see something like this
 - [x] [SimpleStore](https://github.com/rareskills/huff-puzzles/blob/main/src/SimpleStore.huff)
 - [x] [RevertCustom](https://github.com/rareskills/huff-puzzles/blob/main/src/RevertCustom.huff)
 - [x] [RevertString](https://github.com/rareskills/huff-puzzles/blob/main/src/RevertString.huff)
-- [ ] [SumArray](https://github.com/rareskills/huff-puzzles/blob/main/src/SumArray.huff)
+- [x] [SumArray](https://github.com/rareskills/huff-puzzles/blob/main/src/SumArray.huff)
 - [ ] [Keccak](https://github.com/rareskills/huff-puzzles/blob/main/src/Keccak.huff)
 - [ ] [MaxOfArray](https://github.com/rareskills/huff-puzzles/blob/main/src/MaxOfArray.huff)
 - [ ] [Donations](https://github.com/rareskills/huff-puzzles/blob/main/src/Donations.huff)
