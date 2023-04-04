@@ -14,7 +14,27 @@
 #define function store(uint256) payable returns()
 #define function read() payable returns(uint256)
 
-
 #define macro MAIN() = takes(0) returns(0) {
+    returndatasize calldataload 0xE0 shr
+    
+    dup1 __FUNC_SIG(read) eq readJump jumpi
+
+    dup1 __FUNC_SIG(store) eq storeJump jumpi
+
+    errJump jump
+
+    readJump:
+        returndatasize sload
+        returndatasize mstore
+        0x20 returndatasize return
+
+    storeJump:
+        0x04 calldataload
+        returndatasize
+        sstore
+        stop
+
+    errJump:
+        invalid
     
 }
