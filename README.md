@@ -73,6 +73,7 @@ You should see something like this
 - [Create](https://github.com/rareskills/huff-puzzles/blob/main/src/Create.huff)
 - [SendEther](https://github.com/rareskills/huff-puzzles/blob/main/src/SendEther.huff)
 - [Distribute](https://github.com/rareskills/huff-puzzles/blob/main/src/Distribute.huff)
+- [x][Add1](https://github.com/rareskills/huff-puzzles/blob/main/src/Add1.huff)
 
 ## More resources
 

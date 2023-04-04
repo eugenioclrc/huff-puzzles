@@ -13,5 +13,25 @@
 
 
 #define macro MAIN() = takes(0) returns(0) {
+  returndatasize calldataload // signature 32 bytes
+  0xE0 shr                    // 0x000000...(4bytes signature)
+                              // 0x00000000 signature
+  __FUNC_SIG(add1) eq         // 1 or 0
+  OKJump jumpi
+  invalid
+  // if signature doesnt match reverts
+  //invalid
 
+  OKJump:
+
+  0x04 calldataload // number
+  0x01              // number, 1
+  add               // number+1
+  // returndatasize at this point is 0
+  returndatasize     // number+1, 0
+  mstore            // number+1 is stored in 0x00
+
+  // returndatasize at this point is 0
+  // 0x20, 0x00 return, return 32 bytes from 0x00 memory slot
+  0x20 returndatasize return
 }
