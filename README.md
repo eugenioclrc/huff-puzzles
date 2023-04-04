@@ -55,7 +55,7 @@ You should see something like this
 
 - [x] [CallValue](https://github.com/rareskills/huff-puzzles/blob/main/src/CallValue.huff)
 - [x] [CalldataLength](https://github.com/rareskills/huff-puzzles/blob/main/src/CalldataLength.length)
-- [ ] [MyEtherBalance](https://github.com/rareskills/huff-puzzles/blob/main/src/MyEtherBalance.length)
+- [x] [MyEtherBalance](https://github.com/rareskills/huff-puzzles/blob/main/src/MyEtherBalance.length)
 - [x] [Add1](https://github.com/rareskills/huff-puzzles/blob/main/src/Add1.huff)
 - [ ] [Multiply](https://github.com/rareskills/huff-puzzles/blob/main/src/Multiply.huff)
 - [ ] [NonPayable](https://github.com/rareskills/huff-puzzles/blob/main/src/NonPayable.huff)

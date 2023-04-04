@@ -8,5 +8,7 @@
  */
 
 #define macro MAIN() = takes(0) returns(0) {
-   
+  caller balance // balance of caller
+  returndatasize mstore // store value on 0x00
+  0x20 returndatasize return   
 }
