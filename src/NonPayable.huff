@@ -9,5 +9,7 @@
  */
 
 #define macro MAIN() = takes(0) returns(0) {
-
+    returndatasize callvalue eq ok jumpi
+    revert
+    ok:
 }
