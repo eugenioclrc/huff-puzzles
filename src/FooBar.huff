@@ -14,7 +14,26 @@
  #define function foo() payable returns(uint256)
  #define function bar() payable returns(uint256)
 
+#define macro FOO() = takes(0) returns(0) {
+    0x02 returndatasize mstore
+    0x20 returndatasize return
+}
+
+#define macro BAR() = takes(0) returns(0) {
+    0x03 returndatasize mstore
+    0x20 returndatasize return
+}
 
 #define macro MAIN() = takes(0) returns(0) {
+    returndatasize calldataload 0xE0 shr
+    dup1 __FUNC_SIG(foo) eq fooJump jumpi
+    dup1 __FUNC_SIG(bar) eq barJump jumpi
+
+    invalid
+
+    fooJump:
+        FOO()
+    barJump: 
+        BAR()
 
 }
