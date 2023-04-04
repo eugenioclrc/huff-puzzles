@@ -14,5 +14,7 @@
 #define error OnlyHuff()
 
 #define macro MAIN() = takes(0) returns(0) {
-    
+    __FUNC_SIG("OnlyHuff()") 0xe0 shl
+    returndatasize mstore
+    0x20 returndatasize revert
 }

@@ -61,7 +61,7 @@ You should see something like this
 - [x] [NonPayable](https://github.com/rareskills/huff-puzzles/blob/main/src/NonPayable.huff)
 - [x] [FooBar](https://github.com/rareskills/huff-puzzles/blob/main/src/FooBar.huff)
 - [x] [SimpleStore](https://github.com/rareskills/huff-puzzles/blob/main/src/SimpleStore.huff)
-- [ ] [RevertCustom](https://github.com/rareskills/huff-puzzles/blob/main/src/RevertCustom.huff)
+- [x] [RevertCustom](https://github.com/rareskills/huff-puzzles/blob/main/src/RevertCustom.huff)
 - [ ] [RevertString](https://github.com/rareskills/huff-puzzles/blob/main/src/RevertString.huff)
 - [ ] [SumArray](https://github.com/rareskills/huff-puzzles/blob/main/src/SumArray.huff)
 - [ ] [Keccak](https://github.com/rareskills/huff-puzzles/blob/main/src/Keccak.huff)
