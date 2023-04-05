@@ -5,8 +5,8 @@ A series of puzzles that go from very easy to more difficult so that you can hav
 ## Solved exercises
 
 1) [x] [CallValue](/src/CallValue.huff)
-2) [x] [CalldataLength](/src/CalldataLength.length)
-3) [x] [MyEtherBalance](/src/MyEtherBalance.length)
+2) [x] [CalldataLength](/src/CalldataLength.huff)
+3) [x] [MyEtherBalance](/src/MyEtherBalance.huff)
 4) [x] [Add1](/src/Add1.huff)
 5) [x] [Multiply](/src/Multiply.huff)
 6) [x] [NonPayable](/src/NonPayable.huff)
@@ -78,8 +78,8 @@ You should see something like this
 ## Suggested order for other exercises
 
 - [CallValue](https://github.com/rareskills/huff-puzzles/blob/main/src/CallValue.huff)
-- [CalldataLength](https://github.com/rareskills/huff-puzzles/blob/main/src/CalldataLength.length)
-- [MyEtherBalance](https://github.com/rareskills/huff-puzzles/blob/main/src/MyEtherBalance.length)
+- [CalldataLength](https://github.com/rareskills/huff-puzzles/blob/main/src/CalldataLength.huff)
+- [MyEtherBalance](https://github.com/rareskills/huff-puzzles/blob/main/src/MyEtherBalance.huff)
 - [Add1](https://github.com/rareskills/huff-puzzles/blob/main/src/Add1.huff)
 - [Multiply](https://github.com/rareskills/huff-puzzles/blob/main/src/Multiply.huff)
 - [NonPayable](https://github.com/rareskills/huff-puzzles/blob/main/src/NonPayable.huff)
