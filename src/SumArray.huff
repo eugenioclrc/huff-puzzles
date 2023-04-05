@@ -22,7 +22,7 @@
     0x00              // nArgs, sum
     0x24              // nArgs, sum, offset
     start:
-        dup3 0x00 eq endJump jumpi
+        dup3 iszero endJump jumpi
         0x20 add      // nArgs, sum, offset
         swap1         // nArgs, offset, sum
         dup2 calldataload
