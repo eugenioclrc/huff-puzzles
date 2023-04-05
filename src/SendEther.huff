@@ -10,7 +10,34 @@
 
  #define function sendEther(address) payable returns()
 
+/// @notice not reinvienting the weel, this is from huffmate
+#define macro SAFE_TRANSFER_ETH() = takes (2) {
+    // Input stack:            [to, amount]
+    // Output stack:           []
+
+    0x00 dup1 dup1 dup1     // [0x00, 0x00, 0x00, 0x00, to, amount]
+    swap5 swap1 swap4       // [to, amount, 0x00, 0x00, 0x00, 0x00]
+    gas call                // [call_success]
+    success jumpi           // []
+
+    // `ETHTransferFailed()` error
+    0xb12d13eb 0x00 mstore
+    0x04 0x1c revert
+
+    success:
+}
+
 
  #define macro MAIN() = takes(0) returns(0) {
-    
+    0x00 calldataload 0xe0 shr
+    __FUNC_SIG(sendEther) eq sendEtherJump jumpi
+
+    invalid
+
+    sendEtherJump:
+    callvalue           // to, amount,
+    0x04 calldataload
+    SAFE_TRANSFER_ETH()
+
+
  }
