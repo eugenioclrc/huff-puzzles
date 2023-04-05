@@ -13,6 +13,67 @@
  #define function distribute(address[]) payable returns()
 
 
+/// @notice not reinvienting the weel, this is from huffmate
+#define macro SAFE_TRANSFER_ETH() = takes (2) {
+    // Input stack:            [to, amount]
+    // Output stack:           []
+
+    0x00 dup1 dup1 dup1     // [0x00, 0x00, 0x00, 0x00, to, amount]
+    swap5 swap1 swap4       // [to, amount, 0x00, 0x00, 0x00, 0x00]
+    gas call                // [call_success]
+    success jumpi           // []
+
+    // `ETHTransferFailed()` error
+    0xb12d13eb 0x00 mstore
+    0x04 0x1c revert
+
+    success:
+}
+
+
  #define macro MAIN() = takes(0) returns(0) {
-   
+    0x00 calldataload 0xe0 shr
+    __FUNC_SIG(distribute) eq sendEtherJump jumpi
+
+    invalid
+
+    sendEtherJump:
+
+    // stack:     el0, el1, ...
+    // push 0x01
+    // new stack: 0x01, el0, el1, ...
+
+    0x24 // start
+
+    0x24 calldataload   // number of elements in array, start
+    dup1 callvalue div       // amounts/els, els, start
+    dup1 iszero stopJump jumpi
+
+
+    iterateJump:
+    // amounts/els, els, start
+  
+    swap1                       // els, amount, start
+    dup1 iszero stopJump jumpi  // el els == 0 exit
+    
+    0x01 swap1 sub              // els-1, amount, start
+    
+    swap1                       // amount, newEls, start
+    
+    swap2                       // start, newEls, amount
+    0x20 add                    // newstart, newEls, amount
+    swap2                       // amount, newEls, newstart
+
+    dup3 calldataload           // to, amount, newEls, newstart
+    dup2                        // amount, to, amount, newEls, newstart
+    swap1                       // to, amount, amount, newEls, newstart
+    
+    SAFE_TRANSFER_ETH()
+
+    // amount, newEls, newstart
+    
+    iterateJump jump
+
+    stopJump:
+      stop
  }

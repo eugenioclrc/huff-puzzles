@@ -23,7 +23,7 @@ A series of puzzles that go from very easy to more difficult so that you can hav
 17) [x] [Emitter](./huff-puzzles/blob/main/src/Emitter.huff)
 18) [x] [Create](./huff-puzzles/blob/main/src/Create.huff)
 19) [x] [SendEther](./huff-puzzles/blob/main/src/SendEther.huff)
-20) [ ] [Distribute](./huff-puzzles/blob/main/src/Distributor.huff)
+20) [x] [Distribute](./huff-puzzles/blob/main/src/Distributor.huff)
 
 
 ## Pre-requisites
