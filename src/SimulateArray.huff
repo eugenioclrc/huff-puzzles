@@ -15,6 +15,8 @@
  *  NOTICE: The contract should revert when an unrecognized function is called
  */
 
+ /// @dev This huff contract has a lot of room for improvements
+
  #define function pushh(uint256 num) payable returns()
  #define function popp() payable returns()
  #define function read(uint256 index) payable returns(uint256)
@@ -24,6 +26,115 @@
  #define error OutOfBounds()
  #define error ZeroArray()
 
- #define macro MAIN() = takes(0) returns(0) {
-    
+ #define constant LEN = 0x00
+
+ #define macro PUSHH() = takes(0) returns(0) {
+  [LEN] sload 0x01 add // stack: len + 1
+  dup1 [LEN] sstore                    // stack: len
+
+  0x04 calldataload
+  swap1
+  sstore
+  stop
  }
+
+ #define macro POPP() = takes(0) returns(0) {
+  // if LEN == 0, revert ZeroArray() 
+  [LEN] sload                     // stack: len
+  dup1 iszero errZeroJump jumpi
+  
+  // value is in position LEN - 1
+  0x01 dup2 sub
+  // just update the arr, don't need to erase the value
+  [LEN] sstore
+
+  stop
+
+  errZeroJump:
+    __FUNC_SIG(ZeroArray) 0xe0 shl
+    0x00 mstore
+    0x04 0x00 revert
+ }
+
+ #define macro READ() = takes(0) returns(0) {
+  0x04 calldataload
+  
+  // if LEN < 0, revert ZeroArray() 
+  [LEN] sload                     // stack: read, len
+  dup1 dup3 eq errBoundsJump jumpi
+  dup1 dup3 gt errBoundsJump jumpi
+  pop
+
+  // stack: read
+  0x01 add sload
+  0x00 mstore
+  0x20 0x00 return
+  
+  errBoundsJump:
+    __FUNC_SIG(OutOfBounds) 0xe0 shl
+    0x00 mstore
+    0x04 0x00 revert
+ }
+
+ #define macro LENGTH() = takes(0) returns(0) {
+  [LEN] sload
+  0x00 mstore
+  0x20 0x00 return
+ }
+
+ #define macro WRITE() = takes(0) returns(0) {
+  0x04 calldataload
+
+  // if LEN < 0, revert ZeroArray() 
+  [LEN] sload                     // stack: write, len
+  dup1 dup3 eq errBoundsJump jumpi
+  dup1 dup3 gt errBoundsJump jumpi
+  
+
+
+  // stack: write
+  
+  0x24 calldataload
+  0x04 calldataload 0x01 add
+  sstore
+
+  stop
+  
+  /*
+
+  errBoundsJump:
+    __FUNC_SIG(OutOfBounds) 0xe0 shl
+    0x00 mstore
+    0x04 0x00 revert
+  */
+ }
+
+
+
+ #define macro MAIN() = takes(0) returns(0) {
+  0x00 calldataload 0xE0 shr
+  dup1 __FUNC_SIG(pushh)   eq  pushhJump  jumpi
+  dup1 __FUNC_SIG(popp)    eq   poppJump  jumpi
+  dup1 __FUNC_SIG(read)    eq   readJump  jumpi
+  dup1 __FUNC_SIG(length)  eq lengthJump  jumpi
+  dup1 __FUNC_SIG(write)   eq  writeJump  jumpi
+
+  invalid
+
+  pushhJump:
+    PUSHH()
+
+  poppJump:
+    POPP()
+
+  readJump:
+    READ()
+
+  lengthJump:
+    LENGTH()
+
+  writeJump:
+    WRITE()
+  
+  
+}
