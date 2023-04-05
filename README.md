@@ -2,6 +2,30 @@
 
 A series of puzzles that go from very easy to more difficult so that you can have a hands-on introduction to the [huff language](https://huff.sh) and learn EVM bytecode while doing it.
 
+## Solved exercises
+
+1) [x] [CallValue](https://github.com/rareskills/huff-puzzles/blob/main/src/CallValue.huff)
+2) [x] [CalldataLength](https://github.com/rareskills/huff-puzzles/blob/main/src/CalldataLength.length)
+3) [x] [MyEtherBalance](https://github.com/rareskills/huff-puzzles/blob/main/src/MyEtherBalance.length)
+4) [x] [Add1](https://github.com/rareskills/huff-puzzles/blob/main/src/Add1.huff)
+5) [x] [Multiply](https://github.com/rareskills/huff-puzzles/blob/main/src/Multiply.huff)
+6) [x] [NonPayable](https://github.com/rareskills/huff-puzzles/blob/main/src/NonPayable.huff)
+7) [x] [FooBar](https://github.com/rareskills/huff-puzzles/blob/main/src/FooBar.huff)
+8) [x] [SimpleStore](https://github.com/rareskills/huff-puzzles/blob/main/src/SimpleStore.huff)
+9) [x] [RevertCustom](https://github.com/rareskills/huff-puzzles/blob/main/src/RevertCustom.huff)
+10) [x] [RevertString](https://github.com/rareskills/huff-puzzles/blob/main/src/RevertString.huff)
+11) [x] [SumArray](https://github.com/rareskills/huff-puzzles/blob/main/src/SumArray.huff)
+12) [x] [Keccak](https://github.com/rareskills/huff-puzzles/blob/main/src/Keccak.huff)
+13) [ ] [MaxOfArray](https://github.com/rareskills/huff-puzzles/blob/main/src/MaxOfArray.huff)
+14) [ ] [Donations](https://github.com/rareskills/huff-puzzles/blob/main/src/Donations.huff)
+15) [ ] [BasicBank](https://github.com/rareskills/huff-puzzles/blob/main/src/BasicBank.huff)
+16) [ ] [SimulateArray](https://github.com/rareskills/huff-puzzles/blob/main/src/SimulateArray.huff)
+17) [ ] [Emitter](https://github.com/rareskills/huff-puzzles/blob/main/src/Emitter.huff)
+18) [ ] [Create](https://github.com/rareskills/huff-puzzles/blob/main/src/Create.huff)
+19) [ ] [SendEther](https://github.com/rareskills/huff-puzzles/blob/main/src/SendEther.huff)
+20) [ ] [Distribute](https://github.com/rareskills/huff-puzzles/blob/main/src/Distribute.huff)
+
+
 ## Pre-requisites
 
 Make sure you've installed the Huff Compiler as outlined in the [Huff Docs](https://docs.huff.sh/get-started/installing/#installing-huff).
@@ -53,26 +77,26 @@ You should see something like this
 
 ## Suggested order for other exercises
 
-- [x] [CallValue](https://github.com/rareskills/huff-puzzles/blob/main/src/CallValue.huff)
-- [x] [CalldataLength](https://github.com/rareskills/huff-puzzles/blob/main/src/CalldataLength.length)
-- [x] [MyEtherBalance](https://github.com/rareskills/huff-puzzles/blob/main/src/MyEtherBalance.length)
-- [x] [Add1](https://github.com/rareskills/huff-puzzles/blob/main/src/Add1.huff)
-- [x] [Multiply](https://github.com/rareskills/huff-puzzles/blob/main/src/Multiply.huff)
-- [x] [NonPayable](https://github.com/rareskills/huff-puzzles/blob/main/src/NonPayable.huff)
-- [x] [FooBar](https://github.com/rareskills/huff-puzzles/blob/main/src/FooBar.huff)
-- [x] [SimpleStore](https://github.com/rareskills/huff-puzzles/blob/main/src/SimpleStore.huff)
-- [x] [RevertCustom](https://github.com/rareskills/huff-puzzles/blob/main/src/RevertCustom.huff)
-- [x] [RevertString](https://github.com/rareskills/huff-puzzles/blob/main/src/RevertString.huff)
-- [x] [SumArray](https://github.com/rareskills/huff-puzzles/blob/main/src/SumArray.huff)
-- [ ] [Keccak](https://github.com/rareskills/huff-puzzles/blob/main/src/Keccak.huff)
-- [ ] [MaxOfArray](https://github.com/rareskills/huff-puzzles/blob/main/src/MaxOfArray.huff)
-- [ ] [Donations](https://github.com/rareskills/huff-puzzles/blob/main/src/Donations.huff)
-- [ ] [BasicBank](https://github.com/rareskills/huff-puzzles/blob/main/src/BasicBank.huff)
-- [ ] [SimulateArray](https://github.com/rareskills/huff-puzzles/blob/main/src/SimulateArray.huff)
-- [ ] [Emitter](https://github.com/rareskills/huff-puzzles/blob/main/src/Emitter.huff)
-- [ ] [Create](https://github.com/rareskills/huff-puzzles/blob/main/src/Create.huff)
-- [ ] [SendEther](https://github.com/rareskills/huff-puzzles/blob/main/src/SendEther.huff)
-- [ ] [Distribute](https://github.com/rareskills/huff-puzzles/blob/main/src/Distribute.huff)
+- [CallValue](https://github.com/rareskills/huff-puzzles/blob/main/src/CallValue.huff)
+- [CalldataLength](https://github.com/rareskills/huff-puzzles/blob/main/src/CalldataLength.length)
+- [MyEtherBalance](https://github.com/rareskills/huff-puzzles/blob/main/src/MyEtherBalance.length)
+- [Add1](https://github.com/rareskills/huff-puzzles/blob/main/src/Add1.huff)
+- [Multiply](https://github.com/rareskills/huff-puzzles/blob/main/src/Multiply.huff)
+- [NonPayable](https://github.com/rareskills/huff-puzzles/blob/main/src/NonPayable.huff)
+- [FooBar](https://github.com/rareskills/huff-puzzles/blob/main/src/FooBar.huff)
+- [SimpleStore](https://github.com/rareskills/huff-puzzles/blob/main/src/SimpleStore.huff)
+- [RevertCustom](https://github.com/rareskills/huff-puzzles/blob/main/src/RevertCustom.huff)
+- [RevertString](https://github.com/rareskills/huff-puzzles/blob/main/src/RevertString.huff)
+- [SumArray](https://github.com/rareskills/huff-puzzles/blob/main/src/SumArray.huff)
+- [Keccak](https://github.com/rareskills/huff-puzzles/blob/main/src/Keccak.huff)
+- [MaxOfArray](https://github.com/rareskills/huff-puzzles/blob/main/src/MaxOfArray.huff)
+- [Donations](https://github.com/rareskills/huff-puzzles/blob/main/src/Donations.huff)
+- [BasicBank](https://github.com/rareskills/huff-puzzles/blob/main/src/BasicBank.huff)
+- [SimulateArray](https://github.com/rareskills/huff-puzzles/blob/main/src/SimulateArray.huff)
+- [Emitter](https://github.com/rareskills/huff-puzzles/blob/main/src/Emitter.huff)
+- [Create](https://github.com/rareskills/huff-puzzles/blob/main/src/Create.huff)
+- [SendEther](https://github.com/rareskills/huff-puzzles/blob/main/src/SendEther.huff)
+- [Distribute](https://github.com/rareskills/huff-puzzles/blob/main/src/Distribute.huff)
 
 ## More resources
 

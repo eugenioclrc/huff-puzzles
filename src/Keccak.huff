@@ -9,5 +9,17 @@
 
 
  #define macro MAIN() = takes(0) returns(0) {
+    0x00 calldataload     // pointer
+    0x00 mstore           // pointer save to memory 0x00
     
+    0x20 calldataload     // size
+    0x20 mstore           // size save to memory 0x20
+    
+    0x40 calldataload     // content
+    0x40 mstore           // content save to memory 0x40
+    
+    0x60 0x00 sha3        // keccak256
+    0x00 mstore           // keccak256 save to memory 0x00
+
+    0x20 0x00 return      // return 32bytes from keccak256
  }
