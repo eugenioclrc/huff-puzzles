@@ -11,7 +11,38 @@
 
  #define function makeContract() payable returns(address)
 
+  /*
+  this is the contract to be created
+  https://evm-codes-6zqgbc9nl-smlxl.vercel.app/playground?unit=Wei&codeType=Huff&code='~%23define%20macro%20MAIN%7B%7D%20%3D%20takeqyq%20(pcaffev%20mstorep20vyw)'~%20%20y%20returnw%5Cn~vydatasizeqs%7B0%7Dpw~~0x%01pqvwy~_
+  
+  #define macro MAIN() = takes(0) returns(0) {
+      0xcaffe returndatasize mstore
+      0x20 returndatasize return
+  }
+
+  huffc src/Create.huff -b
+  600a8060093d393df3620caffe3d5260203df3
+  */
+ 
+ #define constant CAFFE_CODE = 0x600a8060093d393df3620caffe3d5260203df3
 
  #define macro MAIN() = takes(0) returns(0) {
-    
+ 
+      0x00 calldataload 0xe0 shr
+      __FUNC_SIG(makeContract) eq deployJump jumpi
+
+      invalid
+
+      deployJump:
+      
+      [CAFFE_CODE] 0x00 mstore
+
+      // 0x00 i memory is;
+      // 0x00000000000000000000000000600a8060093d393df3620caffe3d5260203df3
+      // thats why i start reading in the create from position 0x0d
+
+      // 10 bytes of code length in hexa is 0x0A
+      0x13 0x0d 0x00 create 
+      0x00 mstore
+      0x20 0x00 return
  }

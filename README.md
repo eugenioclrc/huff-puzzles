@@ -21,7 +21,7 @@ A series of puzzles that go from very easy to more difficult so that you can hav
 15) [x] [BasicBank](https://github.com/rareskills/huff-puzzles/blob/main/src/BasicBank.huff)
 16) [x] [SimulateArray](https://github.com/rareskills/huff-puzzles/blob/main/src/SimulateArray.huff)
 17) [ ] [Emitter](https://github.com/rareskills/huff-puzzles/blob/main/src/Emitter.huff)
-18) [ ] [Create](https://github.com/rareskills/huff-puzzles/blob/main/src/Create.huff)
+18) [x] [Create](https://github.com/rareskills/huff-puzzles/blob/main/src/Create.huff)
 19) [ ] [SendEther](https://github.com/rareskills/huff-puzzles/blob/main/src/SendEther.huff)
 20) [ ] [Distribute](https://github.com/rareskills/huff-puzzles/blob/main/src/Distribute.huff)
 
