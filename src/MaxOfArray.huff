@@ -9,6 +9,47 @@
 
 #define function maxOfArray(uint256[]) payable returns(uint256)
 
+#define macro LEAVE_MAX() = takes(2) returns(1) {
+    dup2 dup2
+    lt noSwapJump jumpi
+    swap1
+    
+    noSwapJump:
+        
+    pop
+}
+
 #define macro MAIN() = takes(0) returns(0) {
-   
+    0x00 calldataload 0xe0 shr
+    __FUNC_SIG(maxOfArray) eq okJump jumpi
+
+    failJump:
+    invalid
+
+    okJump:
+    
+    0x24 calldataload // number of arguments
+    dup1 iszero failJump jumpi
+
+    0x00              // nArgs, max
+    0x24              // nArgs, max, offset
+    start:
+        dup3 iszero endJump jumpi
+        0x20 add      // nArgs, max, offset
+        swap1         // nArgs, offset, max
+        dup2 calldataload
+        
+        LEAVE_MAX()
+        
+        // nArgs, offset, max
+        swap2        // max, offset, nArgs
+        0x01 swap1 sub     // max, offset, nArgs - 1
+        swap2        // nArgs - 1, offset, max
+        swap1
+        start jump
+    endJump:
+
+    pop
+    0x00 mstore
+    0x20 0x00 return
 }

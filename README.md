@@ -16,7 +16,7 @@ A series of puzzles that go from very easy to more difficult so that you can hav
 10) [x] [RevertString](https://github.com/rareskills/huff-puzzles/blob/main/src/RevertString.huff)
 11) [x] [SumArray](https://github.com/rareskills/huff-puzzles/blob/main/src/SumArray.huff)
 12) [x] [Keccak](https://github.com/rareskills/huff-puzzles/blob/main/src/Keccak.huff)
-13) [ ] [MaxOfArray](https://github.com/rareskills/huff-puzzles/blob/main/src/MaxOfArray.huff)
+13) [x] [MaxOfArray](https://github.com/rareskills/huff-puzzles/blob/main/src/MaxOfArray.huff)
 14) [ ] [Donations](https://github.com/rareskills/huff-puzzles/blob/main/src/Donations.huff)
 15) [ ] [BasicBank](https://github.com/rareskills/huff-puzzles/blob/main/src/BasicBank.huff)
 16) [ ] [SimulateArray](https://github.com/rareskills/huff-puzzles/blob/main/src/SimulateArray.huff)
