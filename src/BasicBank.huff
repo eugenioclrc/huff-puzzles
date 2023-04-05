@@ -11,6 +11,50 @@
 #define function balanceOf(address) payable returns(uint256)
 #define function withdraw(uint256) payable returns()
 
-#define macro MAIN() = takes(0) returns(0) {
+/// @notice Safely transfers an `amount` of eth to the address `to`
+#define macro SAFE_TRANSFER_ETH() = takes (2) {
+    // Input stack:            [to, amount]
+    // Output stack:           []
 
+    0x00 dup1 dup1 dup1     // [0x00, 0x00, 0x00, 0x00, to, amount]
+    swap5 swap1 swap4       // [to, amount, 0x00, 0x00, 0x00, 0x00]
+    gas call                // [call_success]
+    success jumpi           // []
+
+    // `ETHTransferFailed()` error
+    0xb12d13eb 0x00 mstore
+    0x04 0x1c revert
+
+    success:
+}
+
+#define macro MAIN() = takes(0) returns(0) {
+    0x00 calldataload 0xe0 shr
+    dup1 __FUNC_SIG(balanceOf) eq jumpBalanceOf jumpi
+    dup1 __FUNC_SIG(withdraw) eq jumpWithdraw jumpi
+
+    caller sload callvalue add
+    caller sstore
+    stop
+
+    jumpBalanceOf:
+    0x04 calldataload sload
+    0x00 mstore
+    0x20 0x00 return
+
+    jumpWithdraw:
+      caller sload 
+      dup1 iszero jumpRevert jumpi
+      caller
+
+      // set balance to 0
+      0x00 caller sstore
+
+      // stack: balance, owner
+      // send balance to owner
+      SAFE_TRANSFER_ETH()
+      stop
+
+    jumpRevert:
+      invalid
 }
